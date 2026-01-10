@@ -1,5 +1,7 @@
 # ubuntu-gpu-gui
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Lightweight GUI for monitoring GPU status on Ubuntu, with an entry point for setting power limits.
 
 ![Screenshot](docs/intro.png)
