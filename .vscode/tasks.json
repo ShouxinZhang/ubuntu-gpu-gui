@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build ubuntu-gpu-gui",
+      "type": "shell",
+      "command": "go build -tags 'desktop,production,webkit2_41' -o ubuntu-gpu-gui .",
+      "problemMatcher": [
+        "$go"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Run ubuntu-gpu-gui",
+      "type": "shell",
+      "command": "./run.sh",
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}

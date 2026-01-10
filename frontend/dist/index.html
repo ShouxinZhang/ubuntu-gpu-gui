@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ubuntu GPU GUI</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <section class="card gpu-identity">
+        <div class="gpu-row">
+          <span class="badge dgpu">dGPU</span>
+          <span id="dgpu" class="gpu-name">--</span>
+        </div>
+        <div class="gpu-row">
+          <span class="badge igpu">iGPU</span>
+          <span id="igpu" class="gpu-name">--</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card stat"><div class="k">Utilization</div><div class="v-container"><span id="util" class="v big">--</span><span class="u">%</span></div></div>
+        <div class="card stat"><div class="k">Temperature</div><div class="v-container"><span id="temp" class="v big">--</span><span class="u">°C</span></div></div>
+        <div class="card stat"><div class="k">Memory</div><div id="mem" class="v big">--</div></div>
+        <div class="card stat"><div class="k">Real-time Power</div><div id="pwr" class="v big">--</div></div>
+      </section>
+
+      <div class="main-content">
+        <section class="card power-management">
+          <div class="section-title">
+            <span>nvidia-powerd</span>
+            <span id="powerd" class="status-indicator">--</span>
+          </div>
+          <div class="actions">
+            <button id="btnEnablePowerd">Enable Service</button>
+            <button id="btnMaxPower" class="primary">Set Max Power</button>
+            <button id="btnRefresh">Refresh</button>
+          </div>
+          <div class="info-line" id="limits">Power limit: --</div>
+          <pre id="result" class="result-box"></pre>
+        </section>
+
+        <section class="card processes">
+          <div class="section-title">Active Processes <span class="v small">(NVIDIA)</span></div>
+          <pre id="procs" class="result-box"></pre>
+        </section>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

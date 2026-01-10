@@ -1,0 +1,19 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#FF0080;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#9400D3;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#00BFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <path d="M128 10C62.8 10 10 62.8 10 128s52.8 118 118 118 118-52.8 118-118S193.2 10 128 10zm0 216c-54.1 0-98-43.9-98-98s43.9-98 98-98 98 43.9 98 98-43.9 98-98 98z" fill="url(#goldGradient)" />
+  <path d="M185 115h-57v26h30c-2.4 13.5-14.1 24-28 24-15.5 0-28-12.5-28-28s12.5-28 28-28c7.5 0 14.3 3 19.3 7.8l18.4-18.4C158.4 88.6 144.1 81 128 81c-26 0-47 21-47 47s21 47 47 47c23.5 0 43.6-17.2 46.7-39.7l.3-10.3z" fill="url(#goldGradient)" filter="url(#glow)" />
+  <path d="M185 115h-57v26h30c-2.4 13.5-14.1 24-28 24-15.5 0-28-12.5-28-28s12.5-28 28-28c7.5 0 14.3 3 19.3 7.8l18.4-18.4C158.4 88.6 144.1 81 128 81c-26 0-47 21-47 47s21 47 47 47c23.5 0 43.6-17.2 46.7-39.7l.3-10.3z" fill="url(#goldGradient)" />
+</svg>

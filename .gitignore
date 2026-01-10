@@ -1,0 +1,13 @@
+gpu-monitor-go
+
+# Fyne build outputs (if you use fyne package)
+*.tar.xz
+*.app
+*.exe
+
+# Wails app artifacts
+wailsapp/build/
+wailsapp/frontend/node_modules/
+wailsapp/wailsapp
+
+
