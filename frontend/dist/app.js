@@ -16,7 +16,7 @@ async function waitForBindings(timeoutMs = 8000) {
 async function refreshOnce() {
   const ov = await window.go.main.App.GetOverview();
 
-  $("dgpu").textContent = ov.nvidiaName || "--";
+  $("dgpu").textContent = formatGpuSummary(ov) || ov.nvidiaName || "--";
   $("igpu").textContent = ov.iGpuText || "--";
   $("util").textContent = ov.util ?? "--";
   $("temp").textContent = ov.temp ?? "--";
@@ -30,6 +30,9 @@ async function refreshOnce() {
   if (ov.error) {
     console.error(`NVIDIA error: ${ov.error}`);
   }
+  if (Array.isArray(ov.warnings) && ov.warnings.length > 0) {
+    console.warn(`GPU Manager warnings:\n${ov.warnings.join("\n")}`);
+  }
 }
 
 async function refreshLimits() {
@@ -38,7 +41,8 @@ async function refreshLimits() {
     $("limits").textContent = `Power limit: ${lim.error}`;
     return;
   }
-  $("limits").textContent = `Power limit (W): enforced=${Math.round(lim.enforced)} default=${Math.round(lim.default)} max=${Math.round(lim.max)}`;
+  const target = lim.name ? `GPU ${lim.gpuIndex}: ${lim.name}` : `GPU ${lim.gpuIndex}`;
+  $("limits").textContent = `${target} power limit (W): enforced=${Math.round(lim.enforced)} default=${Math.round(lim.default)} max=${Math.round(lim.max)}`;
 }
 
 async function runAction(fn) {
@@ -82,3 +86,15 @@ main().catch((e) => {
   console.error(String(e));
   $("result").textContent = String(e);
 });
+
+function formatGpuSummary(ov) {
+  if (!Array.isArray(ov.gpus) || ov.gpus.length === 0) {
+    return "";
+  }
+  return ov.gpus
+    .map((gpu) => {
+      const util = typeof gpu.utilizationGpuPercent === "number" ? ` ${Math.round(gpu.utilizationGpuPercent)}%` : "";
+      return `${gpu.index}: ${gpu.name || "NVIDIA GPU"}${util}`;
+    })
+    .join(" | ");
+}

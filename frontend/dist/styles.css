@@ -50,7 +50,7 @@ body {
 }
 .badge.dgpu { background: rgba(74, 128, 255, 0.2); color: var(--accent); }
 .badge.igpu { background: rgba(138, 148, 166, 0.2); color: var(--muted); }
-.gpu-name { font-size: 14px; font-family: ui-monospace, SFMono-Regular, monospace; }
+.gpu-name { font-size: 14px; font-family: ui-monospace, SFMono-Regular, monospace; overflow-wrap: anywhere; }
 
 /* Grid Stats */
 .grid {

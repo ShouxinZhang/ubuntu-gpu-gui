@@ -1,9 +1,11 @@
 [Desktop Entry]
+Type=Application
 Name=GPU Manager
 Comment=Monitor GPU status and set power limits
-Exec=${BIN_PATH}
-Icon=${ICON_PATH}
+Exec=ubuntu-gpu-gui
+Icon=gpu-manager
 Terminal=false
-Type=Application
 Categories=System;Monitor;
 Keywords=gpu;nvidia;monitor;power;
+StartupNotify=true
+StartupWMClass=gpu-manager
