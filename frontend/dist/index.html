@@ -22,8 +22,28 @@
       <section class="grid">
         <div class="card stat"><div class="k">Utilization</div><div class="v-container"><span id="util" class="v big">--</span><span class="u">%</span></div></div>
         <div class="card stat"><div class="k">Temperature</div><div class="v-container"><span id="temp" class="v big">--</span><span class="u">°C</span></div></div>
-        <div class="card stat"><div class="k">Memory</div><div id="mem" class="v big">--</div></div>
-        <div class="card stat"><div class="k">Real-time Power</div><div id="pwr" class="v big">--</div></div>
+        <div class="card stat">
+          <div class="k">Memory</div>
+          <div class="v-column">
+            <div id="mem-used" class="v big">--</div>
+            <div class="v-line">
+              <span class="v-divider">/</span>
+              <span id="mem-total" class="v medium">--</span>
+              <span class="u">MiB</span>
+            </div>
+          </div>
+        </div>
+        <div class="card stat">
+          <div class="k">Real-time Power</div>
+          <div class="v-column">
+            <div id="pwr-draw" class="v big">--</div>
+            <div class="v-line">
+              <span class="v-divider">/</span>
+              <span id="pwr-limit" class="v medium">--</span>
+              <span class="u">W</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <div class="main-content">

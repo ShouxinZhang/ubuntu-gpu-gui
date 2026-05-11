@@ -2,11 +2,6 @@ function $(id) {
   return document.getElementById(id);
 }
 
-function fmtPower(ov) {
-  if (!ov.pwrDraw) return "--";
-  return `${ov.pwrDraw} / ${ov.pwrEnforced} W`;
-}
-
 async function waitForBindings(timeoutMs = 8000) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
@@ -25,8 +20,10 @@ async function refreshOnce() {
   $("igpu").textContent = ov.iGpuText || "--";
   $("util").textContent = ov.util ?? "--";
   $("temp").textContent = ov.temp ?? "--";
-  $("mem").textContent = ov.memUsed && ov.memTotal ? `${ov.memUsed} / ${ov.memTotal} MiB` : "--";
-  $("pwr").textContent = fmtPower(ov);
+  $("mem-used").textContent = ov.memUsed || "--";
+  $("mem-total").textContent = ov.memTotal || "--";
+  $("pwr-draw").textContent = ov.pwrDraw || "--";
+  $("pwr-limit").textContent = ov.pwrMax || "--";
   $("powerd").textContent = ov.powerdStatus || "--";
   $("procs").textContent = ov.processes || "";
 

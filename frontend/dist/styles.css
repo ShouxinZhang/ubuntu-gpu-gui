@@ -60,8 +60,30 @@ body {
 }
 .stat .k { color: var(--muted); font-size: 12px; margin-bottom: 8px; font-weight: 500; }
 .v-container { display: flex; align-items: baseline; gap: 2px; }
-.v.big { font-size: 24px; font-weight: 800; color: #fff; }
+.v.big { font-size: 24px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+.v.medium { font-size: 18px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
 .u { font-size: 14px; color: var(--muted); font-weight: 600; }
+
+.v-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 52px; /* Stabilize height */
+  justify-content: flex-end;
+}
+
+.v-line {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+}
+
+.v-divider {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+}
 
 /* Main Content Area */
 .main-content {
